@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+  <title>Верификация - Crypto Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <link rel="stylesheet" href="/static/css/verification.css"/>
+  <link rel="icon" href="/static/icons/image.png" type="image/png"/>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="/static/js/translations.js"></script>
+</head>
+<body>
+<div class="verification-page telegram dark">
+  <div id="root">
+    <div class="layout">
+      <main class="content">
+        <div class="container">
+          <div class="top">
+            <div class="animation">
+              <img src="/static/icons/verification.jpg" alt="Verification Logo" class="logo">
+
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 14 14" height="1em" width="1em" class="star">
+                <title>Star</title>
+                <path d="M7 14C6.63616 14 6.34651 13.7378 6.27243 13.3462C5.57839 8.85959 5.01926 8.32676 0.673763 7.72813C0.282963 7.674 0 7.3768 0 7C0 6.6232 0.28965 6.31327 0.680449 6.2655C5.03274 5.78044 5.65258 5.14678 6.27243 0.653829C6.33303 0.269598 6.62947 0 7 0C7.36384 0 7.66028 0.269598 7.72089 0.653829C8.40134 5.14678 8.98754 5.72631 13.3262 6.2655C13.7104 6.31964 14 6.6232 14 7C14 7.3768 13.7104 7.68036 13.3196 7.72813C8.96727 8.21956 8.34073 8.85322 7.72089 13.3462C7.66697 13.7304 7.37053 14 7 14Z"></path>
+        </svg>
+      </div>
+            <h1 class="title">Верификация</h1>
+            <p class="subtitle" id="verification-subtitle">Больше возможностей с повышенным уровнем верификации.</p>
+            <ul class="list hideDivider" id="verification-list">
+
+            </ul>
+            <div id="debug-info" style="display: none; color: white; padding: 10px; background: rgba(0,0,0,0.5); margin-top: 10px; border-radius: 5px;">
+              <div>Debug: JavaScript loaded</div>
+              <div>Debug: List element found: <span id="list-status">checking...</span></div>
+              <div>Debug: Items count: <span id="items-count">0</span></div>
+            </div>
+      </div>
+    </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="phone-verification-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header" style="display: none;">
+        <h2>Подтверждение номера телефона</h2>
+        <button class="modal-close" onclick="closeModal('phone-verification-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="verification-step">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3>Поделиться номером с ботом?</h3>
+          <p>Для подтверждения номера телефона необходимо поделиться им с нашим ботом через Telegram.</p>
+          <div class="verification-actions">
+            <button class="btn btn-secondary" onclick="closeModal('phone-verification-modal')">Отмена</button>
+            <button class="btn btn-primary" onclick="confirmPhoneVerification()">Да, поделиться</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="document-upload-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header" style="display: none;">
+        <h2>Загрузка документов</h2>
+        <button class="modal-close" onclick="closeModal('document-upload-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="verification-step">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>Подтверждение личности</h3>
+          <p>Загрузите фотографии документов для подтверждения личности:</p>
+
+          <div class="document-upload-section">
+            <div class="upload-area" id="front-document-upload">
+              <div class="upload-placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10,9 9,9 8,9"></polyline>
+                </svg>
+                <p>Документ спереди</p>
+                <span class="upload-hint">Нажмите для загрузки</span>
+              </div>
+              <input type="file" id="front-document" accept="image/*" style="display: none;">
+            </div>
+
+            <div class="upload-area" id="back-document-upload">
+              <div class="upload-placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10,9 9,9 8,9"></polyline>
+                </svg>
+                <p>Документ сзади</p>
+                <span class="upload-hint">Нажмите для загрузки</span>
+              </div>
+              <input type="file" id="back-document" accept="image/*" style="display: none;">
+            </div>
+          </div>
+
+          <div class="verification-actions">
+            <button class="btn btn-secondary" onclick="closeModal('document-upload-modal')">Отмена</button>
+            <button class="btn btn-primary" onclick="submitDocuments()" id="submit-documents-btn" disabled>Загрузить документы</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="address-verification-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header" style="display: none;">
+        <h2>Адрес проживания</h2>
+        <button class="modal-close" onclick="closeModal('address-verification-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="verification-step">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10C18 16 12 20 12 20C12 20 6 16 6 10C6 6.68629 8.68629 4 12 4C15.3137 4 18 6.68629 18 10Z"></path>
+              <circle cx="12" cy="10" r="2"></circle>
+            </svg>
+          </div>
+          <h3>Подтверждение места жительства</h3>
+          <p>Укажите ваш адрес проживания для завершения верификации:</p>
+
+          <div class="address-form">
+            <div class="form-group">
+              <label for="country">Страна</label>
+              <input type="text" id="country" placeholder="Введите страну" required>
+            </div>
+            <div class="form-group">
+              <label for="city">Город</label>
+              <input type="text" id="city" placeholder="Введите город" required>
+            </div>
+            <div class="form-group">
+              <label for="address">Адрес</label>
+              <textarea id="address" placeholder="Введите полный адрес" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="postal-code">Почтовый индекс</label>
+              <input type="text" id="postal-code" placeholder="Введите почтовый индекс">
+            </div>
+          </div>
+
+          <div class="verification-actions">
+            <button class="btn btn-secondary" onclick="closeModal('address-verification-modal')">Отмена</button>
+            <button class="btn btn-primary" onclick="submitAddress()">Подтвердить адрес</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="video-verification-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header" style="display: none;">
+        <h2>Видеоверификация</h2>
+        <button class="modal-close" onclick="closeModal('video-verification-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="verification-step">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 7l-7 5 7 5V7z"></path>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+          </div>
+          <h3>Проверка личности через видео</h3>
+          <p>Для завершения верификации необходимо пройти видеопроверку:</p>
+
+          <div class="video-instructions">
+            <div class="instruction-item">
+              <div class="instruction-number">1</div>
+              <div class="instruction-text">
+                <strong>Поверните голову направо</strong>
+                <p>Медленно поверните голову в правую сторону</p>
+              </div>
+            </div>
+            <div class="instruction-item">
+              <div class="instruction-number">2</div>
+              <div class="instruction-text">
+                <strong>Поверните голову налево</strong>
+                <p>Медленно поверните голову в левую сторону</p>
+              </div>
+            </div>
+            <div class="instruction-item">
+              <div class="instruction-number">3</div>
+              <div class="instruction-text">
+                <strong>Подойдите ближе к камере</strong>
+                <p>Приблизьтесь к камере для лучшего качества</p>
+              </div>
+            </div>
+            <div class="instruction-item">
+              <div class="instruction-number">4</div>
+              <div class="instruction-text">
+                <strong>Покажите документ</strong>
+                <p>Покажите документ рядом с лицом</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <video id="video-preview" autoplay muted></video>
+            <div class="video-overlay">
+              <div class="recording-indicator">
+                <div class="recording-dot"></div>
+                <span>Запись...</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="verification-actions">
+            <button class="btn btn-secondary" onclick="closeModal('video-verification-modal')">Отмена</button>
+            <button class="btn btn-primary" onclick="startVideoVerification()">Начать запись</button>
+            <button class="btn btn-success" onclick="stopVideoVerification()" id="stop-video-btn" style="display: none;">Завершить запись</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="/static/js/verification.js"></script>
+</html>

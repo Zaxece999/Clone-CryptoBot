@@ -1,0 +1,376 @@
+.withdraw-body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #1c1e22;
+  color: #e4e6eb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.withdraw-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 12px 0;
+  box-sizing: border-box;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: transparent;
+}
+
+.sheet {
+  background-color: #282a2e;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  transform: translateY(0);
+  transition: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px 2px;
+}
+
+.sheet-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: #9aa0a6;
+  text-transform: uppercase;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9aa0a6;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid #2a2d31;
+  border-radius: 12px;
+  margin: 0 12px;
+}
+
+.search-icon { color: #9aa0a6; display: flex; }
+
+.search input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: #e4e6eb;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 6px 0;
+  outline: 0;
+}
+
+.search input::placeholder {
+  color: #9aa0a6;
+}
+
+.coin-picker {
+  list-style: none;
+  padding: 0 12px;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 8px;
+}
+
+.coin-picker .row {
+  display: flex;
+  align-items: center;
+  padding: 12px 6px;
+  border-bottom: 1px solid #2a2d31;
+  cursor: pointer;
+}
+
+.coin-picker .row:last-child {
+  border-bottom: none;
+}
+
+.coin-picker .row:hover { background: #232527; border-radius: 12px;}
+
+.coin-picker .row .left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.coin-picker .row .coin-icon { width: 44px; height: 44px; border-radius: 50%; margin-right: 12px; }
+
+.coin-picker .row .labels .sym { font-weight: 600; font-size: 15px; color: #e4e6eb; }
+
+.coin-picker .row .labels .sub { font-size: 12px; color: #9aa0a6; margin-top: 2px; }
+
+.coin-picker .row .right {
+  text-align: right;
+}
+
+.coin-picker .row .right .amount {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e4e6eb;
+}
+
+.coin-picker .row .right .fiat {
+  font-size: 12px;
+  color: #9aa0a6;
+}
+
+.withdraw-view {
+
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.withdraw-view .sheet-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px 2px;
+  border-bottom: 1px solid #2a2d31;
+}
+
+.withdraw-view .sheet-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: #9aa0a6;
+  text-transform: uppercase;
+}
+
+.network-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.network-list .row {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px;
+  border-bottom: 1px solid #2a2d31;
+  cursor: pointer;
+}
+
+.network-list .row:last-child {
+  border-bottom: none;
+}
+
+.network-list .row:hover { background: #232527; border-radius: 12px;}
+
+.network-list .row .left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.network-list .row .coin-icon { width: 44px; height: 44px; border-radius: 50%; margin-right: 12px; }
+
+.network-list .row .labels .name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #e4e6eb;
+}
+
+.network-list .row .labels .sub {
+  font-size: 12px;
+  color: #9aa0a6;
+  margin-top: 2px;
+}
+
+.network-list .row .chev {
+  color: #9aa0a6;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+.insuff-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.insuff-top .big-coin {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.insuff-top .insuff-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ef4444;
+  text-align: center;
+}
+
+.insuff-card {
+  background-color: #33363b;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.insuff-card .rowline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.insuff-card .rowline:last-child {
+  margin-bottom: 0;
+}
+
+.insuff-card .rowline span {
+  font-size: 14px;
+  color: #e4e6eb;
+}
+
+.insuff-card .rowline .red {
+  color: #ef4444;
+}
+
+.insuff-note {
+  font-size: 13px;
+  color: #9aa0a6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.withdraw-view .back-btn {
+  background-color: #33363b;
+  color: #e4e6eb;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.2s ease;
+}
+
+.withdraw-view .back-btn:hover {
+  background-color: #3c3e42;
+}
+
+@media (max-width: 520px) {
+  .sheet {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: calc(100vh - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .withdraw-page {
+    padding: 10px;
+  }
+
+  .sheet-header {
+    padding: 10px 15px;
+  }
+
+  .sheet-title {
+    font-size: 16px;
+  }
+
+  .search {
+    padding: 8px 15px;
+  }
+
+  .search input {
+    font-size: 14px;
+  }
+
+  .coin-picker .row {
+    padding: 10px 15px;
+  }
+
+  .coin-picker .row .coin-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .coin-picker .row .labels .sym {
+    font-size: 14px;
+  }
+
+  .coin-picker .row .labels .sub {
+    font-size: 12px;
+  }
+
+  .withdraw-view {
+    padding: 15px;
+  }
+
+  .insuff-top .big-coin {
+    width: 50px;
+    height: 50px;
+  }
+
+  .insuff-top .insuff-title {
+    font-size: 18px;
+  }
+
+  .insuff-card {
+    padding: 12px;
+  }
+
+  .insuff-card .rowline span {
+    font-size: 13px;
+  }
+
+  .insuff-note {
+    font-size: 12px;
+  }
+
+  .withdraw-view .back-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

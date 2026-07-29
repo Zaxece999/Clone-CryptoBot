@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/user_menu.css">
+<div class="user-menu-container">
+  <div class="user-menu-content">
+    <ul class="menu-list">
+      <li class="menu-item" data-page="settings" onclick="navigateToMenuItem('settings')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Настройки</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item" data-page="address_book" onclick="navigateToMenuItem('address_book')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Адресная книга</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item" data-page="security" onclick="navigateToMenuItem('security')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Безопасность</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item" data-page="p2p_merchant" onclick="navigateToMenuItem('p2p_merchant')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">P2P Мерчант</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item" data-page="p2c_merchant" onclick="navigateToMenuItem('p2c_merchant')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">P2C Мерчант</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item" data-page="verification" onclick="navigateToMenuItem('verification')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"/>
+            <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 12v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Верификация</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item" data-page="privacy_policy" onclick="navigateToMenuItem('privacy_policy')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+            <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Политика конфиденциальности</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item" data-page="aml_policy" onclick="navigateToMenuItem('aml_policy')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+            <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Политика AML</span>
+        <div class="menu-arrow">›</div>
+      </li>
+
+      <li class="menu-item external" data-page="crypto_bot_help" onclick="navigateToMenuItem('crypto_bot_help')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Справка Crypto Bot</span>
+        <div class="menu-arrow external">↗</div>
+      </li>
+
+      <li class="menu-item external" data-page="crypto_bot_features" onclick="navigateToMenuItem('crypto_bot_features')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Что умеет Crypto Bot</span>
+        <div class="menu-arrow external">↗</div>
+      </li>
+
+      <li class="menu-item external" data-page="support" onclick="navigateToMenuItem('support')">
+        <div class="menu-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="menu-text">Написать в поддержку</span>
+        <div class="menu-arrow external">↗</div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="/static/js/user_menu.js"></script>

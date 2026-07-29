@@ -1,0 +1,179 @@
+.currency-selection-body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #1c1e22;
+  color: #e4e6eb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.currency-selection-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sheet {
+  background-color: #282a2e;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  transform: translateY(0);
+  transition: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #3c3e42;
+  position: sticky;
+  top: 0;
+  background-color: #282a2e;
+  z-index: 10;
+}
+
+.sheet-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e4e6eb;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9aa0a6;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.currency-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.currency-list .row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #3c3e42;
+  cursor: pointer;
+}
+
+.currency-list .row:last-child {
+  border-bottom: none;
+}
+
+.currency-list .row:hover {
+  background-color: #33363b;
+}
+
+.currency-list .row .left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.currency-list .row .coin-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.currency-list .row .labels .sym {
+  font-weight: 500;
+  font-size: 16px;
+  color: #e4e6eb;
+}
+
+.currency-list .row .labels .sub {
+  font-size: 13px;
+  color: #9aa0a6;
+}
+
+.checkmark-indicator {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+
+}
+
+.checkmark-indicator.selected::after {
+  content: '✔';
+  font-size: 16px;
+  color: #3390ec;
+}
+
+@media (max-width: 520px) {
+  .sheet {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: calc(100vh - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .currency-selection-page {
+    padding: 10px;
+  }
+
+  .sheet-header {
+    padding: 10px 15px;
+  }
+
+  .sheet-title {
+    font-size: 16px;
+  }
+
+  .currency-list .row {
+    padding: 10px 15px;
+  }
+
+  .currency-list .row .coin-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+
+  .currency-list .row .labels .sym {
+    font-size: 14px;
+  }
+
+  .currency-list .row .labels .sub {
+    font-size: 12px;
+  }
+
+  .checkmark-indicator {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkmark-indicator.selected::after {
+    width: 8px;
+    height: 8px;
+  }
+}

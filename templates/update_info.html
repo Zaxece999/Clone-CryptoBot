@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Info</title>
+  <link rel="stylesheet" href="/static/css/update_info.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+</head>
+<body>
+<div class="update-info-page">
+
+  <div class="update-step" id="step-phone">
+    <div class="page-header">
+      <div class="sticker-container">
+        <div id="phone-sticker"></div>
+      </div>
+      <h2 data-translate="update_info_modal_title">Обновите информацию</h2>
+      <p data-translate="update_info_modal_subtitle">Укажите ваши данные, чтобы обезопасить свой аккаунт.</p>
+    </div>
+    <div class="step-content">
+      <p class="info-text" data-translate="phone_step_info">
+        Для продолжения необходимо отправить номер телефона в чат с веб-приложением.
+      </p>
+      <button class="continue-btn" id="continue-phone" data-translate="continue">Продолжить</button>
+    </div>
+  </div>
+
+  <div class="update-step hidden" id="step-form">
+    <div class="personal-data-form-container">
+      <div class="page-header">
+        <h2 data-translate="personal_data_title">Личные данные</h2>
+        <p data-translate="personal_data_subtitle">Заполните форму для завершения обновления</p>
+      </div>
+
+      <form id="personal-data-form">
+        <div class="form-group names-row">
+          <div>
+            <label for="first-name">Имя</label>
+            <input type="text" id="first-name" placeholder="Введите имя" required pattern="[A-Za-zА-Яа-яЁё]+" title="Только буквы">
+          </div>
+          <div>
+            <label for="last-name">Фамилия</label>
+            <input type="text" id="last-name" placeholder="Введите фамилию" required pattern="[A-Za-zА-Яа-яЁё]+" title="Только буквы">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Дата рождения</label>
+          <div class="names-row">
+            <select id="birth-day" required><option value="">День</option></select>
+            <select id="birth-month" required><option value="">Месяц</option></select>
+            <select id="birth-year" required><option value="">Год</option></select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Страна</label>
+          <select id="country" required>
+            <option value="">Выберите страну</option>
+          </select>
+        </div>
+
+        <div class="form-buttons">
+          <button type="button" class="back-btn">Назад</button>
+          <button type="submit" class="continue-btn">Продолжить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="update-step hidden" id="step-document">
+    <div class="page-header">
+      <div class="sticker-container">
+        <div id="document-sticker"></div>
+      </div>
+      <h2 data-translate="agreement_title">Согласие с условиями</h2>
+      <p data-translate="agreement_subtitle">Ознакомьтесь с документами</p>
+    </div>
+    <div class="step-content">
+      <div class="document-content">
+        <p data-translate="agreement_text">Я согласен с условиями использования и политикой конфиденциальности.</p>
+      </div>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" id="agree-terms" required>
+          <span data-translate="agree_terms">Я согласен с условиями</span>
+        </label>
+      </div>
+      <button class="continue-btn" id="submit-final" data-translate="submit">Отправить</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="/static/js/update_info.js"></script>
+</body>
+</html>

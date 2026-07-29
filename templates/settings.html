@@ -1,0 +1,14 @@
+<div class="settings-page" data-user-id="{{ user_id }}">
+  <meta name="user-id" content="{{ user_id }}">
+  <script src="/static/js/user-manager.js"></script>
+  <div class="page-header">
+    <h2 data-translate="settings">НАСТРОЙКИ</h2>
+  </div>
+  <ul class="settings-list">
+    <li class="settings-item" id="open-timezones"><span class="label" data-translate="timezone">Часовой пояс</span><span class="value" id="tz-current">-</span><span class="chev">›</span></li>
+    <li class="settings-item" id="open-language"><span class="label" data-translate="language">Язык</span><span class="value" id="lang-current">Русский</span><span class="chev">›</span></li>
+    <li class="settings-item" id="open-currency"><span class="label" data-translate="bot_currency">Валюта бота</span><span class="value" id="base-curr-current">USD</span><span class="chev">›</span></li>
+    <li class="settings-item"><span class="label" data-translate="enable_sounds">Включить звуки</span><label class="switch"><input type="checkbox" id="sounds-toggle"><span class="slider"></span></label></li>
+  </ul>
+</div>
+<script src="/static/js/settings.js"></script>

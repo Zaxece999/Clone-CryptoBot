@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/static/css/swap.css">
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="/static/js/translations.js"></script>
+	<script src="/static/js/swap.js" defer></script>
+</head>
+<body>
+	<div class="swap-page">
+		<div class="swap-card">
+
+			<div class="swap-section">
+				<div class="section-header">
+					<div class="section-label">Вы отправляете</div>
+					<div class="balance-info-max">
+						<svg class="wallet-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+							<path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M3 7v10a2 2 0 0 0 2 2h16v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M18 12a2 2 0 0 0-2 2v4h4v-4a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<span class="balance-text">0</span>
+						<button class="max-button" id="max-btn">МАКС</button>
+					</div>
+				</div>
+				<div class="currency-input-row">
+					<div class="currency-selector" id="from-currency">
+						<img src="/static/images/coins/TON.webp" class="coin-icon" alt="TON">
+						<span class="currency-name">TON</span>
+						<span class="chevron">›</span>
+					</div>
+					<input type="number" id="from-amount" placeholder="0" min="0" step="any" inputmode="decimal" class="amount-input">
+				</div>
+				<div class="error-message" id="swap-errors"></div>
+			</div>
+
+			<button class="swap-button" id="swap-currencies">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17 9.5L12 4.5L7 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M7 14.5L12 19.5L17 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</button>
+
+			<div class="swap-section">
+				<div class="section-header">
+					<div class="section-label">Вы получаете</div>
+
+					<div></div>
+				</div>
+				<div class="currency-input-row">
+					<div class="currency-selector" id="to-currency">
+						<img src="/static/images/coins/USDT.webp" class="coin-icon" alt="USDT">
+						<span class="currency-name">USDT</span>
+						<span class="chevron">›</span>
+					</div>
+					<div class="amount-display" id="to-amount">0</div>
+				</div>
+				<div class="error-message" id="swap-errors-receive"></div>
+			</div>
+
+			<button class="exchange-button" id="continue-swap">ОБМЕНЯТЬ</button>
+		</div>
+
+		<div class="sheet-overlay" id="swap-coin-modal" aria-hidden="true">
+			<div class="sheet-content">
+				<div class="sheet-header">
+					<div class="sheet-title">Выбор монеты</div>
+					<button class="sheet-close-btn" id="swap-coin-close">
+						<svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+				</div>
+				<div class="search">
+					<span class="search-icon">
+						<svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M21 21 16.65 16.65M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
+						</svg>
+					</span>
+					<input type="text" id="swap-coin-search" placeholder="Поиск монеты" autocomplete="off"/>
+				</div>
+				<ul class="coin-picker" id="swap-coin-list">
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

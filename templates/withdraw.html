@@ -1,0 +1,237 @@
+<div class="withdraw-page">
+  <div class="sheet-header">
+    <div class="sheet-title">ВЫВОД СРЕДСТВ</div>
+  </div>
+  <div class="search">
+    <span class="search-icon">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 21 16.65 16.65M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </span>
+    <input type="text" id="withdraw-search" placeholder="Поиск монеты" autocomplete="off"/>
+  </div>
+  <ul class="coin-picker" id="withdraw-coin-list">
+    <li class="row" data-symbol="USDT" data-name="Tether">
+      <div class="left">
+        <img src="/static/images/coins/USDT.webp" class="coin-icon" alt="USDT">
+        <div class="labels"><div class="sym">USDT</div><div class="sub">Tether</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="TON" data-name="Toncoin">
+      <div class="left">
+        <img src="/static/images/coins/TON.webp" class="coin-icon" alt="TON">
+        <div class="labels"><div class="sym">TON</div><div class="sub">Toncoin</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="SOL" data-name="Solana">
+      <div class="left">
+        <img src="/static/images/coins/SOL.webp" class="coin-icon" alt="SOL">
+        <div class="labels"><div class="sym">SOL</div><div class="sub">Solana</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="TRX" data-name="TRON">
+      <div class="left">
+        <img src="/static/images/coins/TRX.webp" class="coin-icon" alt="TRX">
+        <div class="labels"><div class="sym">TRX</div><div class="sub">TRON</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+
+    <li class="row" data-symbol="BTC" data-name="Bitcoin">
+      <div class="left">
+        <img src="/static/images/coins/BTC.webp" class="coin-icon" alt="BTC">
+        <div class="labels"><div class="sym">BTC</div><div class="sub">Bitcoin</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="ETH" data-name="Ethereum">
+      <div class="left">
+        <img src="/static/images/coins/ETH.webp" class="coin-icon" alt="ETH">
+        <div class="labels"><div class="sym">ETH</div><div class="sub">Ethereum</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="DOGE" data-name="Dogecoin">
+      <div class="left">
+        <img src="/static/images/coins/DOGE.webp" class="coin-icon" alt="DOGE">
+        <div class="labels"><div class="sym">DOGE</div><div class="sub">Dogecoin</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="LTC" data-name="Litecoin">
+      <div class="left">
+        <img src="/static/images/coins/LTC.webp" class="coin-icon" alt="LTC">
+        <div class="labels"><div class="sym">LTC</div><div class="sub">Litecoin</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="NOT" data-name="Notcoin">
+      <div class="left">
+        <img src="/static/images/coins/NOT.webp" class="coin-icon" alt="NOT">
+        <div class="labels"><div class="sym">NOT</div><div class="sub">Notcoin</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="TRUMP" data-name="Official Trump">
+      <div class="left">
+        <img src="/static/images/coins/TRUMP.webp" class="coin-icon" alt="TRUMP">
+        <div class="labels"><div class="sym">TRUMP</div><div class="sub">Official Trump</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="MELANIA" data-name="Melania Meme">
+      <div class="left">
+        <img src="/static/images/coins/MELANIA.webp" class="coin-icon" alt="MELANIA">
+        <div class="labels"><div class="sym">MELANIA</div><div class="sub">Melania Meme</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+    <li class="row" data-symbol="PEPE" data-name="PEPE">
+      <div class="left">
+        <img src="/static/images/coins/PEPE.webp" class="coin-icon" alt="PEPE">
+        <div class="labels"><div class="sym">PEPE</div><div class="sub">PEPE</div></div>
+      </div>
+      <div class="right">
+        <div class="amount sensitive">Loading...</div>
+        <div class="fiat muted sensitive">Loading...</div>
+      </div>
+    </li>
+  </ul>
+
+  <div id="withdraw-networks" hidden>
+    <div class="withdraw-view">
+      <div class="sheet-header">
+        <div class="sheet-title">ВЫБЕРИТЕ СЕТЬ</div>
+      </div>
+      <ul class="network-list">
+
+        <li class="row" data-network="TON" data-name="The Open Network">
+          <div class="left">
+            <img src="/static/images/coins/TON.webp" class="coin-icon" alt="TON">
+            <div class="labels">
+              <div class="name">The Open Network</div>
+              <div class="sub">TON</div>
+            </div>
+          </div>
+          <div class="chev">›</div>
+        </li>
+        <li class="row" data-network="TRC20" data-name="Tron">
+          <div class="left">
+            <img src="/static/images/coins/TRX.webp" class="coin-icon" alt="TRX">
+            <div class="labels">
+              <div class="name">Tron</div>
+              <div class="sub">TRC20</div>
+            </div>
+          </div>
+          <div class="chev">›</div>
+        </li>
+        <li class="row" data-network="SPL" data-name="Solana">
+          <div class="left">
+            <img src="/static/images/coins/SOL.webp" class="coin-icon" alt="SOL">
+            <div class="labels">
+              <div class="name">Solana</div>
+              <div class="sub">SPL</div>
+            </div>
+          </div>
+          <div class="chev">›</div>
+        </li>
+        <li class="row" data-network="ERC20" data-name="Ethereum">
+          <div class="left">
+            <img src="/static/images/coins/ETH.webp" class="coin-icon" alt="ETH">
+            <div class="labels">
+              <div class="name">Ethereum</div>
+              <div class="sub">ERC20</div>
+            </div>
+          </div>
+          <div class="chev">›</div>
+        </li>
+        <li class="row" data-network="BEP20" data-name="BNB Smart Chain">
+          <div class="left">
+            <img src="/static/images/coins/BNB.webp" class="coin-icon" alt="BNB">
+            <div class="labels">
+              <div class="name">BNB Smart Chain</div>
+              <div class="sub">BEP20</div>
+            </div>
+          </div>
+          <div class="chev">›</div>
+        </li>
+      </ul>
+
+      <h3 class="section-title">Сумма для вывода</h3>
+      <div class="form-group">
+        <label for="withdraw-amount">Сумма</label>
+        <input type="number" id="withdraw-amount" placeholder="0.00" min="0" step="any" inputmode="decimal">
+        <div class="rate-info" id="withdraw-rate-info"></div>
+      </div>
+
+      <h3 class="section-title">Адрес кошелька</h3>
+      <div class="form-group">
+        <label for="withdraw-address">Адрес</label>
+        <input type="text" id="withdraw-address" placeholder="Введите адрес кошелька">
+      </div>
+
+      <div class="form-group">
+        <label for="withdraw-tag">Мемо / Тег (необязательно)</label>
+        <input type="text" id="withdraw-tag" placeholder="Введите мемо или тег">
+      </div>
+
+      <button class="continue-btn" id="withdraw-confirm-btn">Подтвердить</button>
+    </div>
+  </div>
+
+  <div id="withdraw-insufficient" hidden>
+    <div class="withdraw-view">
+      <div class="insuff-card">
+        <span class="insuff-icon" id="insuff-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2Z" fill="#ffcc00"/>
+            <path d="M12 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" fill="#212121"/>
+            <path d="M12 7c-.552 0-1 .448-1 1v5a1 1 0 1 0 2 0V8c0-.552-.448-1-1-1Z" fill="#212121"/>
+          </svg>
+        </span>
+        <h3 class="insuff-title" id="insuff-title">Недостаточно средств</h3>
+        <p class="insuff-text">Ваш баланс: <span id="insuff-balance">0 USDT</span></p>
+        <p class="insuff-text">Минимальная сумма: <span id="insuff-min">10 USDT</span></p>
+        <p class="insuff-text">Комиссия за вывод: <span id="insuff-fee">1 USDT</span></p>
+        <p class="insuff-text">Монета: <span id="insuff-coin">USDT</span></p>
+      </div>
+      <button class="back-btn" id="insuff-back-btn">Назад</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+  <title>Crypto Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <link rel="icon" href="/static/icons/image.png" type="image/png"/>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="/static/js/translations.js"></script>
+  <script src="/static/js/script.js" defer></script>
+  <script src="/static/js/transactions.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <section class="user-summary">
+      <div class="user clickable" id="user-btn">
+        <img src="" class="avatar">
+        <span class="username"></span>
+      </div>
+      <div class="balance clickable">
+        <div class="amount-row">
+          <h1 class="amount-balance"><span class="currency-symbol">$</span><span class="balance-digits sensitive">Loading...</span></h1>
+          <button class="eye" id="eye-toggle" title="Показать/скрыть" aria-label="Показать/скрыть">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+        </div>
+        <p class="muted"><span data-translate="total_balance">Общий баланс в</span> <button class="link inline" id="currency-btn">USD</button></p>
+      </div>
+
+      <div class="quick-actions">
+        <button class="round action-topup" id="deposit-btn"><span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="18" width="16" height="3" rx="1.5" fill="currentColor"/></svg></span><label data-translate="deposit">Пополнить</label></button>
+        <button class="round action-withdraw" id="withdraw-btn"><span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 14l-5-5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="3" width="16" height="3" rx="1.5" fill="currentColor"/></svg></span><label data-translate="withdraw">Вывести</label></button>
+        <button class="round action-swap" id="swap-btn"><span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 8h10M7 8l2-2M7 8l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 16H7m10 0l-2-2m2 2l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><label data-translate="swap">Обмен</label></button>
+        <button class="round action-market"><span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="7" width="2" height="10" rx="1" fill="currentColor"/><rect x="6" y="7" width="2" height="10" rx="1" fill="currentColor"/><rect x="11" y="4" width="2" height="16" rx="1" fill="currentColor"/><rect x="16" y="9" width="2" height="7" rx="1" fill="currentColor"/></svg></span><label data-translate="market">Биржа</label></button>
+      </div>
+
+      <div class="banner clickable" id="update-info-banner">
+        <div id="wave-sticker" class="sticker"></div>
+        <div class="banner-text">
+          <div class="title" data-translate="update_info_title">Обновите информацию</div>
+          <div class="subtitle" data-translate="update_info_subtitle">Укажите ваши данные, чтобы обезопасить свой аккаунт.</div>
+      </div>
+        <div class="chev-btn" aria-hidden="true">›</div>
+      </div>
+    </section>
+
+    <section class="assets">
+      <div class="assets-head">
+      <h2 data-translate="assets">АКТИВЫ</h2>
+        <button class="link" data-translate="hide_small_balances">СКРЫТЬ МЕЛКИЕ БАЛАНСЫ</button>
+      </div>
+      <ul class="coin-list">
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/USDT.webp" alt="USDT" class="coin-icon">
+            <div class="meta">
+              <div class="name">Tether</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/TON.webp" alt="TON" class="coin-icon">
+            <div class="meta">
+              <div class="name">Toncoin</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/SOL.webp" alt="SOL" class="coin-icon">
+            <div class="meta">
+              <div class="name">Solana</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/TRX.webp" alt="TRX" class="coin-icon">
+            <div class="meta">
+              <div class="name">TRON</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/LTC.webp" alt="LTC" class="coin-icon">
+            <div class="meta">
+              <div class="name">Litecoin</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/BNB.webp" alt="BNB" class="coin-icon">
+            <div class="meta">
+              <div class="name">Binance Coin</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/USDC.webp" alt="USDC" class="coin-icon">
+            <div class="meta">
+              <div class="name">USD Coin</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/BTC.webp" alt="BTC" class="coin-icon">
+            <div class="meta">
+              <div class="name">Bitcoin</div>
+              <div class="price muted" data-translate="loading">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive" data-translate="loading">Loading...</div>
+            <div class="fiat muted sensitive" data-translate="loading">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/ETH.webp" alt="ETH" class="coin-icon">
+            <div class="meta">
+              <div class="name">Ethereum</div>
+              <div class="price muted">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive">Loading...</div>
+            <div class="fiat muted sensitive">Loading...</div>
+          </div>
+        </li>
+        <li class="coin">
+          <div class="left">
+            <img src="/static/images/coins/DOGE.webp" alt="DOGE" class="coin-icon">
+            <div class="meta">
+              <div class="name">Dogecoin</div>
+              <div class="price muted">Loading...</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="amount sensitive">Loading...</div>
+            <div class="fiat muted sensitive">Loading...</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="transactions">
+      <div class="transactions-head">
+        <h2>ИСТОРИЯ ТРАНЗАКЦИЙ</h2>
+      </div>
+      <div class="transaction-list" id="transaction-list">
+
+      </div>
+    </section>
+  </div>
+  <div id="dynamic-content-container"></div>
+
+  <div class="transaction-modal" id="transaction-modal">
+    <div class="modal-content">
+      <div class="modal-body" id="modal-body">
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

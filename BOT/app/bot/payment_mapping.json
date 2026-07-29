@@ -1,0 +1,588 @@
+{
+  "payment_methods_mapping": {
+    "tinkoff": {
+      "keywords": ["тинькофф", "tinkoff", "tinkof"],
+      "enum_value": "tinkoff"
+    },
+    "sberbank": {
+      "keywords": ["сбер", "sber", "sberbank"],
+      "enum_value": "sberbank"
+    },
+    "qiwi": {
+      "keywords": ["qiwi"],
+      "enum_value": "qiwi"
+    },
+    "yandex_money": {
+      "keywords": ["yoomoney", "юmoney", "yandex", "яндекс", "юмон"],
+      "enum_value": "yandex_money"
+    },
+    "paypal": {
+      "keywords": ["paypal"],
+      "enum_value": "paypal"
+    },
+    "webmoney": {
+      "keywords": ["webmoney"],
+      "enum_value": "webmoney"
+    },
+    "card": {
+      "keywords": ["card", "visa", "mastercard", "карта"],
+      "enum_value": "card"
+    },
+    "bank_transfer": {
+      "keywords": [
+        "swift", "sepa", "wire transfer", "bank transfer", 
+        "faster payments", "ach", "банковский перевод",
+        "сбп", "система быстрых платежей", "pix", "ted", "doc",
+        "upi", "imps", "neft", "rtgs", "promptpay", "fast",
+        "blik", "wise", "revolut"
+      ],
+      "enum_value": "bank_transfer"
+    },
+    "other": {
+      "keywords": [
+        "alipay", "wechat pay", "skrill", "neteller", "advcash", "perfect money",
+        "venmo", "zelle", "ovo", "gopay", "dana", "linkaja", "truemoney", 
+        "line pay", "paytm", "phonepe", "google pay", "picpay", "mercadopago",
+        "click", "payme", "apelsin", "kaspi", "halyk", "jusan", "humo",
+        "uzcard", "элкарт", "корти миллӣ", "noon pay", "stc pay",
+        "bit", "paybox", "papara", "paycell", "enpara"
+      ],
+      "enum_value": "other"
+    }
+  },
+  "banks_mapping": {
+    "alfa_bank": {
+      "keywords": ["альфа", "alfa bank", "альфа-банк"],
+      "enum_value": "alfa_bank",
+      "display_name": "Альфа-Банк"
+    },
+    "vtb": {
+      "keywords": ["втб", "vtb bank"],
+      "enum_value": "vtb",
+      "display_name": "ВТБ"
+    },
+    "raiffeisen": {
+      "keywords": ["райффайзен", "raiffeisen", "райффайзенбанк"],
+      "enum_value": "raiffeisen",
+      "display_name": "Райффайзенбанк"
+    },
+    "rosbank": {
+      "keywords": ["росбанк", "rosbank"],
+      "enum_value": "rosbank",
+      "display_name": "Росбанк"
+    },
+    "gazprombank": {
+      "keywords": ["газпромбанк", "gazprombank"],
+      "enum_value": "gazprombank",
+      "display_name": "Газпромбанк"
+    },
+    "otkritie": {
+      "keywords": ["открытие", "otkritie"],
+      "enum_value": "otkritie",
+      "display_name": "Открытие"
+    },
+    "pochta_bank": {
+      "keywords": ["почта банк", "pochta bank"],
+      "enum_value": "pochta_bank",
+      "display_name": "Почта Банк"
+    },
+    "sovcombank": {
+      "keywords": ["совкомбанк", "sovcombank"],
+      "enum_value": "sovcombank",
+      "display_name": "Совкомбанк"
+    },
+    "promsvyazbank": {
+      "keywords": ["промсвязьбанк", "promsvyazbank", "psb"],
+      "enum_value": "promsvyazbank",
+      "display_name": "Промсвязьбанк"
+    },
+    "mts_bank": {
+      "keywords": ["мтс банк", "mts bank"],
+      "enum_value": "mts_bank",
+      "display_name": "МТС Банк"
+    },
+    "home_credit": {
+      "keywords": ["хоум кредит", "home credit"],
+      "enum_value": "home_credit",
+      "display_name": "Хоум Кредит"
+    },
+    "renaissance": {
+      "keywords": ["ренессанс", "renaissance", "ренессанс банк"],
+      "enum_value": "renaissance",
+      "display_name": "Ренессанс Банк"
+    },
+    "ak_bars": {
+      "keywords": ["ак барс", "ak bars"],
+      "enum_value": "ak_bars",
+      "display_name": "Ак Барс Банк"
+    },
+    "uralsib": {
+      "keywords": ["уралсиб", "uralsib"],
+      "enum_value": "uralsib",
+      "display_name": "Уралсиб"
+    },
+    "tochka": {
+      "keywords": ["точка", "tochka bank"],
+      "enum_value": "tochka",
+      "display_name": "Точка Банк"
+    },
+    "modulbank": {
+      "keywords": ["модульбанк", "modulbank"],
+      "enum_value": "modulbank",
+      "display_name": "Модульбанк"
+    },
+    "spb_bank": {
+      "keywords": ["банк санкт-петербург", "spb bank"],
+      "enum_value": "spb_bank",
+      "display_name": "Банк Санкт-Петербург"
+    },
+    "mkb": {
+      "keywords": ["мкб", "mkb", "московский кредитный банк"],
+      "enum_value": "mkb",
+      "display_name": "МКБ"
+    },
+    "bcs_bank": {
+      "keywords": ["бкс банк", "bcs bank"],
+      "enum_value": "bcs_bank",
+      "display_name": "БКС Банк"
+    },
+    "rosgosstrakh": {
+      "keywords": ["росгосстрах банк", "rosgosstrakh"],
+      "enum_value": "rosgosstrakh",
+      "display_name": "Росгосстрах Банк"
+    },
+    "unicredit": {
+      "keywords": ["юникредит банк", "unicredit"],
+      "enum_value": "unicredit",
+      "display_name": "ЮниКредит Банк"
+    },
+    "sinara": {
+      "keywords": ["синара банк", "sinara bank"],
+      "enum_value": "sinara",
+      "display_name": "Синара Банк"
+    },
+    "bank_of_america": {
+      "keywords": ["bank of america", "boa"],
+      "enum_value": "bank_of_america",
+      "display_name": "Bank of America"
+    },
+    "chase": {
+      "keywords": ["chase", "chase bank", "jpmorgan chase"],
+      "enum_value": "chase",
+      "display_name": "Chase Bank"
+    },
+    "wells_fargo": {
+      "keywords": ["wells fargo"],
+      "enum_value": "wells_fargo",
+      "display_name": "Wells Fargo"
+    },
+    "citi": {
+      "keywords": ["citi", "citibank", "citicorp"],
+      "enum_value": "citi",
+      "display_name": "Citibank"
+    },
+    "capital_one": {
+      "keywords": ["capital one"],
+      "enum_value": "capital_one",
+      "display_name": "Capital One"
+    },
+    "us_bank": {
+      "keywords": ["us bank", "u.s. bank"],
+      "enum_value": "us_bank",
+      "display_name": "U.S. Bank"
+    },
+    "pnc": {
+      "keywords": ["pnc", "pnc bank"],
+      "enum_value": "pnc",
+      "display_name": "PNC Bank"
+    },
+    "td_bank": {
+      "keywords": ["td bank", "td canada trust"],
+      "enum_value": "td_bank",
+      "display_name": "TD Bank"
+    },
+    "hsbc_us": {
+      "keywords": ["hsbc us", "hsbc usa"],
+      "enum_value": "hsbc_us",
+      "display_name": "HSBC USA"
+    },
+    "santander_us": {
+      "keywords": ["santander us", "santander usa"],
+      "enum_value": "santander_us",
+      "display_name": "Santander USA"
+    },
+    "deutsche_bank": {
+      "keywords": ["deutsche bank"],
+      "enum_value": "deutsche_bank",
+      "display_name": "Deutsche Bank"
+    },
+    "commerzbank": {
+      "keywords": ["commerzbank"],
+      "enum_value": "commerzbank",
+      "display_name": "Commerzbank"
+    },
+    "ing": {
+      "keywords": ["ing bank", "ing"],
+      "enum_value": "ing",
+      "display_name": "ING Bank"
+    },
+    "santander": {
+      "keywords": ["santander", "banco santander"],
+      "enum_value": "santander",
+      "display_name": "Santander"
+    },
+    "bnp_paribas": {
+      "keywords": ["bnp paribas"],
+      "enum_value": "bnp_paribas",
+      "display_name": "BNP Paribas"
+    },
+    "societe_generale": {
+      "keywords": ["societe generale", "société générale"],
+      "enum_value": "societe_generale",
+      "display_name": "Société Générale"
+    },
+    "credit_agricole": {
+      "keywords": ["credit agricole", "crédit agricole"],
+      "enum_value": "credit_agricole",
+      "display_name": "Crédit Agricole"
+    },
+    "abn_amro": {
+      "keywords": ["abn amro"],
+      "enum_value": "abn_amro",
+      "display_name": "ABN AMRO"
+    },
+    "kbc": {
+      "keywords": ["kbc bank", "kbc"],
+      "enum_value": "kbc",
+      "display_name": "KBC Bank"
+    },
+    "caixabank": {
+      "keywords": ["caixabank", "caixa bank"],
+      "enum_value": "caixabank",
+      "display_name": "CaixaBank"
+    },
+    "intesa_sanpaolo": {
+      "keywords": ["intesa sanpaolo"],
+      "enum_value": "intesa_sanpaolo",
+      "display_name": "Intesa Sanpaolo"
+    },
+    "ubs": {
+      "keywords": ["ubs", "ubs europe"],
+      "enum_value": "ubs",
+      "display_name": "UBS"
+    },
+    "erste": {
+      "keywords": ["erste bank", "erste"],
+      "enum_value": "erste",
+      "display_name": "Erste Bank"
+    },
+    "n26": {
+      "keywords": ["n26"],
+      "enum_value": "n26",
+      "display_name": "N26"
+    },
+    "bunq": {
+      "keywords": ["bunq"],
+      "enum_value": "bunq",
+      "display_name": "Bunq"
+    },
+    "revolut": {
+      "keywords": ["revolut"],
+      "enum_value": "revolut"
+    },
+    "barclays": {
+      "keywords": ["barclays"],
+      "enum_value": "barclays",
+      "display_name": "Barclays"
+    },
+    "hsbc": {
+      "keywords": ["hsbc"],
+      "enum_value": "hsbc",
+      "display_name": "HSBC"
+    },
+    "lloyds": {
+      "keywords": ["lloyds"],
+      "enum_value": "lloyds",
+      "display_name": "Lloyds Bank"
+    },
+    "natwest": {
+      "keywords": ["natwest"],
+      "enum_value": "natwest",
+      "display_name": "NatWest"
+    },
+    "tsb": {
+      "keywords": ["tsb bank", "tsb"],
+      "enum_value": "tsb",
+      "display_name": "TSB Bank"
+    },
+    "halifax": {
+      "keywords": ["halifax"],
+      "enum_value": "halifax",
+      "display_name": "Halifax"
+    },
+    "virgin_money": {
+      "keywords": ["virgin money"],
+      "enum_value": "virgin_money",
+      "display_name": "Virgin Money"
+    },
+    "nationwide": {
+      "keywords": ["nationwide"],
+      "enum_value": "nationwide",
+      "display_name": "Nationwide"
+    },
+    "metro_bank": {
+      "keywords": ["metro bank"],
+      "enum_value": "metro_bank",
+      "display_name": "Metro Bank"
+    },
+    "monzo": {
+      "keywords": ["monzo"],
+      "enum_value": "monzo",
+      "display_name": "Monzo"
+    },
+    "starling": {
+      "keywords": ["starling bank", "starling"],
+      "enum_value": "starling",
+      "display_name": "Starling Bank"
+    },
+    "icbc": {
+      "keywords": ["icbc", "industrial and commercial bank of china"],
+      "enum_value": "icbc",
+      "display_name": "ICBC"
+    },
+    "bank_of_china": {
+      "keywords": ["bank of china", "boc"],
+      "enum_value": "bank_of_china",
+      "display_name": "Bank of China"
+    },
+    "ccb": {
+      "keywords": ["ccb", "china construction bank"],
+      "enum_value": "ccb",
+      "display_name": "China Construction Bank"
+    },
+    "abc": {
+      "keywords": ["abc", "agricultural bank of china"],
+      "enum_value": "abc",
+      "display_name": "Agricultural Bank of China"
+    },
+    "china_merchants_bank": {
+      "keywords": ["china merchants bank", "cmb"],
+      "enum_value": "china_merchants_bank",
+      "display_name": "China Merchants Bank"
+    },
+    "cis_banks": {
+      "keywords": [
+        "forte", "eurasian", "centercredit", "altyn", "bank rbk",
+        "freedom finance", "home credit", "atf bank", "tengri", "capitalbank"
+      ],
+      "enum_value": "cis_banks",
+      "display_name": "CIS Banks"
+    },
+    "georgian_banks": {
+      "keywords": [
+        "tbc bank", "bank of georgia", "liberty bank", "terabank",
+        "credo bank", "basisbank", "cartu bank", "procredit bank"
+      ],
+      "enum_value": "georgian_banks",
+      "display_name": "Georgian Banks"
+    },
+    "armenian_banks": {
+      "keywords": [
+        "ameriabank", "acba", "inecobank", "ardshinbank", "araratbank",
+        "idbank", "evocabank", "vtb armenia", "unibank am", "byblos bank armenia"
+      ],
+      "enum_value": "armenian_banks",
+      "display_name": "Armenian Banks"
+    },
+    "turkish_banks": {
+      "keywords": [
+        "ziraat bankası", "iş bankası", "garanti bbva", "akbank", "yapı kredi",
+        "qnb finansbank", "halkbank", "vakıfbank", "denizbank", "teb", "ing türkiye"
+      ],
+      "enum_value": "turkish_banks",
+      "display_name": "Turkish Banks"
+    },
+    "thai_banks": {
+      "keywords": [
+        "bangkok bank", "kasikorn", "scb", "krungthai", "krungsri",
+        "tmbthanachart", "kiatnakin", "uob thailand"
+      ],
+      "enum_value": "thai_banks",
+      "display_name": "Thai Banks"
+    },
+    "indonesian_banks": {
+      "keywords": [
+        "bca", "bri", "bni", "mandiri", "cimb niaga", "danamon",
+        "permata", "btpn", "ocbc nisp", "maybank indonesia"
+      ],
+      "enum_value": "indonesian_banks",
+      "display_name": "Indonesian Banks"
+    },
+    "malaysian_banks": {
+      "keywords": [
+        "maybank", "cimb bank", "public bank", "rhb bank", "hong leong bank",
+        "ambank", "alliance bank", "uob malaysia", "standard chartered malaysia"
+      ],
+      "enum_value": "malaysian_banks",
+      "display_name": "Malaysian Banks"
+    },
+    "vietnamese_banks": {
+      "keywords": [
+        "vietcombank", "techcombank", "bidv", "vietinbank", "acb",
+        "sacombank", "mb bank", "vpbank", "agribank", "hdbank"
+      ],
+      "enum_value": "vietnamese_banks",
+      "display_name": "Vietnamese Banks"
+    },
+    "philippine_banks": {
+      "keywords": [
+        "bdo", "bpi", "metrobank", "pnb", "unionbank", "security bank",
+        "rcbc", "chinabank", "eastwest bank", "psbank"
+      ],
+      "enum_value": "philippine_banks",
+      "display_name": "Philippine Banks"
+    },
+    "indian_banks": {
+      "keywords": [
+        "sbi", "hdfc", "icici", "axis bank", "kotak mahindra", "indusind bank",
+        "yes bank", "pnb", "canara bank", "union bank of india"
+      ],
+      "enum_value": "indian_banks",
+      "display_name": "Indian Banks"
+    },
+    "brazilian_banks": {
+      "keywords": [
+        "itau", "bradesco", "banco do brasil", "caixa", "santander brasil",
+        "btg pactual", "inter", "nubank", "original", "safra"
+      ],
+      "enum_value": "brazilian_banks",
+      "display_name": "Brazilian Banks"
+    },
+    "mexican_banks": {
+      "keywords": [
+        "bbva mexico", "banamex", "santander mexico", "banorte", "hsbc mexico",
+        "scotiabank mexico", "inbursa", "azteca", "bajio", "mifel"
+      ],
+      "enum_value": "mexican_banks",
+      "display_name": "Mexican Banks"
+    },
+    "nigerian_banks": {
+      "keywords": [
+        "gtbank", "zenith bank", "access bank", "first bank", "uba",
+        "fidelity bank", "sterling bank", "fcmb", "unity bank", "wema bank"
+      ],
+      "enum_value": "nigerian_banks",
+      "display_name": "Nigerian Banks"
+    },
+    "south_african_banks": {
+      "keywords": [
+        "standard bank", "absa", "fnb", "nedbank", "capitec",
+        "investec", "african bank", "tyme bank", "discovery bank"
+      ],
+      "enum_value": "south_african_banks",
+      "display_name": "South African Banks"
+    },
+    "japanese_banks": {
+      "keywords": [
+        "mitsubishi ufj", "sumitomo mitsui", "mizuho", "resona",
+        "japan post bank", "seven bank", "rakuten bank", "sony bank"
+      ],
+      "enum_value": "japanese_banks",
+      "display_name": "Japanese Banks"
+    },
+    "korean_banks": {
+      "keywords": [
+        "kb kookmin", "shinhan", "hana bank", "woori bank", "nh nonghyup",
+        "ibk", "keb", "sc bank korea", "citibank korea"
+      ],
+      "enum_value": "korean_banks",
+      "display_name": "Korean Banks"
+    },
+    "australian_banks": {
+      "keywords": [
+        "commonwealth bank", "westpac", "anz", "nab", "macquarie bank",
+        "bendigo bank", "suncorp", "ing australia", "ubank"
+      ],
+      "enum_value": "australian_banks",
+      "display_name": "Australian Banks"
+    },
+    "canadian_banks": {
+      "keywords": [
+        "royal bank", "td canada", "scotiabank", "bmo", "cibc",
+        "national bank", "desjardins", "hsbc canada", "tangerine"
+      ],
+      "enum_value": "canadian_banks",
+      "display_name": "Canadian Banks"
+    },
+    "monobank": {
+      "keywords": ["monobank", "монобанк"],
+      "enum_value": "monobank",
+      "display_name": "Monobank"
+    },
+    "privatbank": {
+      "keywords": ["приватбанк", "privatbank"],
+      "enum_value": "privatbank",
+      "display_name": "ПриватБанк"
+    },
+    "oschadbank": {
+      "keywords": ["ощадбанк", "oschadbank"],
+      "enum_value": "oschadbank",
+      "display_name": "Ощадбанк"
+    },
+    "pumb": {
+      "keywords": ["пумб", "pumb"],
+      "enum_value": "pumb",
+      "display_name": "ПУМБ"
+    },
+    "a_bank": {
+      "keywords": ["а-банк", "a-bank"],
+      "enum_value": "a_bank",
+      "display_name": "А-Банк"
+    },
+    "ukrgasbank": {
+      "keywords": ["укргазбанк", "ukrgasbank"],
+      "enum_value": "ukrgasbank",
+      "display_name": "Укргазбанк"
+    },
+    "ukrsibbank": {
+      "keywords": ["укрсиббанк", "ukrsibbank"],
+      "enum_value": "ukrsibbank",
+      "display_name": "УкрСиббанк"
+    },
+    "kredobank": {
+      "keywords": ["кредобанк", "kredobank"],
+      "enum_value": "kredobank",
+      "display_name": "Кредобанк"
+    },
+    "idea_bank": {
+      "keywords": ["идея банк", "idea bank"],
+      "enum_value": "idea_bank",
+      "display_name": "Идея Банк"
+    },
+    "otp_bank": {
+      "keywords": ["отп банк", "otp bank"],
+      "enum_value": "otp_bank",
+      "display_name": "ОТП Банк"
+    },
+    "pivdennyi": {
+      "keywords": ["південний", "pivdennyi"],
+      "enum_value": "pivdennyi",
+      "display_name": "Південний"
+    },
+    "mtb_bank": {
+      "keywords": ["мтб банк", "mtb bank"],
+      "enum_value": "mtb_bank",
+      "display_name": "МТБ Банк"
+    },
+    "bank_vostok": {
+      "keywords": ["банк восток", "bank vostok"],
+      "enum_value": "bank_vostok",
+      "display_name": "Банк Восток"
+    },
+    "sense_bank": {
+      "keywords": ["sense bank"],
+      "enum_value": "sense_bank",
+      "display_name": "Sense Bank"
+    }
+  }
+}

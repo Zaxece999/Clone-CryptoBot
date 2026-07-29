@@ -1,0 +1,188 @@
+.deposit-body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #1c1e22;
+  color: #e4e6eb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.deposit-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 12px 0;
+  box-sizing: border-box;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: transparent;
+}
+
+.sheet {
+  background-color: #282a2e;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  transform: translateY(0);
+  transition: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px 2px;
+}
+
+.sheet-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: #9aa0a6;
+  text-transform: uppercase;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9aa0a6;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1.2px solid #2a2d31;
+  border-radius: 12px;
+  margin: 0 12px;
+}
+
+.search-icon { color: #9aa0a6; display: flex; }
+
+.search input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: #e4e6eb;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 6px 0;
+  outline: 0;
+}
+
+.search input::placeholder {
+  color: #9aa0a6;
+}
+
+.coin-picker {
+  list-style: none;
+  padding: 0 12px;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 8px;
+}
+
+.coin-picker .row {
+  display: flex;
+  align-items: center;
+  padding: 12px 6px;
+  border-bottom: 1px solid #303030;
+  cursor: pointer;
+}
+
+.coin-picker .row:last-child {
+  border-bottom: none;
+}
+
+.coin-picker .row:hover { background: #232527; border-radius: 12px; }
+
+.coin-picker .row .left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.coin-picker .row .coin-icon { width: 44px; height: 44px; border-radius: 50%; margin-right: 12px; }
+
+.coin-picker .row .labels .sym { font-weight: 600; font-size: 15px; color: white; }
+
+.coin-picker .row .labels .sub { font-size: 12px; color: gray; margin-top: 2px; }
+
+.coin-picker .row .chev { color: #9aa0a6; font-size: 18px; margin-left: 8px; }
+
+@media (max-width: 520px) {
+  .sheet {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: calc(100vh - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .deposit-page {
+    padding: 10px;
+  }
+
+  .sheet-header {
+    padding: 10px 15px;
+  }
+
+  .sheet-title {
+    font-size: 16px;
+  }
+
+  .search {
+    padding: 8px 15px;
+  }
+
+  .search input {
+    font-size: 14px;
+  }
+
+  .coin-picker .row {
+    padding: 10px 15px;
+  }
+
+  .coin-picker .row .coin-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+
+  .coin-picker .row .labels .sym {
+    font-size: 14px;
+  }
+
+  .coin-picker .row .labels .sub {
+    font-size: 12px;
+  }
+}

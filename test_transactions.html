@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест Транзакций</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        body {
+            background: #121212;
+            color: #e5e7eb;
+            font-family: 'SF Pro Display', Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .test-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .test-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">Тест Окна Транзакций</h1>
+
+        <section class="transactions">
+            <div class="transactions-head">
+                <h2>ИСТОРИЯ ТРАНЗАКЦИЙ</h2>
+            </div>
+            <div class="transaction-list" id="transaction-list">
+
+                <div class="transaction-group">
+                    <div class="transaction-date">1 СЕНТЯБРЯ</div>
+
+                    <div class="transaction-item" onclick="openTestModal('buy')">
+                        <div class="transaction-icon buy">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <div class="transaction-description">Покупка USDT за KZT</div>
+                            <div class="transaction-time">1 сен. 12:40</div>
+                        </div>
+                        <div class="transaction-amounts">
+                            <div class="transaction-crypto positive">+1.800000 USDT</div>
+                            <div class="transaction-fiat">900 ₸</div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-item" onclick="openTestModal('check')">
+                        <div class="transaction-icon check">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <div class="transaction-description">Чек</div>
+                            <div class="transaction-time">1 сен. 10:15</div>
+                        </div>
+                        <div class="transaction-amounts">
+                            <div class="transaction-crypto positive">+30000.000000 TON</div>
+                            <div class="transaction-fiat">7,548,936.98 ₽</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transaction-group">
+                    <div class="transaction-date">22 АВГУСТА</div>
+
+                    <div class="transaction-item" onclick="openTestModal('withdrawal')">
+                        <div class="transaction-icon withdrawal">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L12 22M12 2L6 8M12 2L18 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <div class="transaction-description">Вывод на карту</div>
+                            <div class="transaction-time">22 авг. 09:15</div>
+                        </div>
+                        <div class="transaction-amounts">
+                            <div class="transaction-crypto negative">-5.000000 USDT</div>
+                            <div class="transaction-fiat">400.0 ₽</div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-item" onclick="openTestModal('crystalpay')">
+                        <div class="transaction-icon crystalpay">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <div class="transaction-description">CrystalPAY</div>
+                            <div class="transaction-time">22 авг. 11:43</div>
+                        </div>
+                        <div class="transaction-amounts">
+                            <div class="transaction-crypto negative">-1.781291 USDT</div>
+                            <div class="transaction-fiat">143.1 ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="transaction-modal" id="transaction-modal">
+        <div class="modal-content">
+            <div class="modal-body" id="modal-body">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTestModal(type) {
+            const modal = document.getElementById('transaction-modal');
+            const modalBody = document.getElementById('modal-body');
+
+            let content = '';
+
+            switch(type) {
+                case 'buy':
+                    content = `
+                        <div class="transaction-summary">
+                            <div class="transaction-icons-overlay">
+                                <div class="icons-wrapper">
+                                    <div class="icon-back">
+                                        <img src="/static/images/coins/USDT.webp" alt="USDT" class="icon-img">
+                                    </div>
+                                    <div class="icon-front">
+                                        <img src="/static/images/currency/KZT.webp" alt="KZT" class="icon-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transaction-type">Покупка USDT за KZT</div>
+                            <div class="transaction-amount-large positive">+1.800000 USDT</div>
+                            <div class="transaction-spent">-900 ₸</div>
+                        </div>
+
+                        <div class="transaction-details-list">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="detail-label">Ордер ID</div>
+                                <div class="detail-value">D28380863</div>
+                                <button class="copy-btn" onclick="copyText('D28380863')" title="Копировать">
+                                    <span class="copy-icon">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                    <span class="check-icon">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="detail-label">Дата</div>
+                                <div class="detail-value">1 сен. 12:40</div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <img class="counterparty-avatar-img" src="/static/images/avatar.jpg" alt="Trader">
+                                </div>
+                                <div class="detail-label">Контрагент</div>
+                                <div class="detail-value">
+                                    <div class="counterparty-info">
+                                        <div class="counterparty-details">
+                                            <div class="counterparty-name">Crypto Trader</div>
+                                            <div class="counterparty-stats">156 сделок, 98.7%, $8,945.23</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-conditions">
+                            <div class="conditions-label">Условия</div>
+                            <div class="conditions-text">
+                                <div class="highlight">Только прямые переводы</div>
+                                <div class="highlight">Обязательно указывать номер телефона</div>
+                                <div class="highlight">Без комиссий и скрытых платежей</div>
+                            </div>
+                        </div>
+
+                        <button class="back-btn" onclick="closeTestModal()">Назад</button>
+                    `;
+                    break;
+
+                case 'check':
+                    content = `
+                        <div class="transaction-summary">
+                            <div class="transaction-icons-overlay">
+                                <div class="icons-wrapper">
+                                    <div class="icon-back">
+                                        <img src="/static/images/coins/TON.webp" alt="TON" class="icon-img">
+                                    </div>
+                                    <div class="icon-front">
+                                        <img src="/static/images/currency/RUB.webp" alt="RUB" class="icon-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transaction-type">Чек</div>
+                            <div class="transaction-amount-large positive">+30000.000000 TON</div>
+                            <div class="transaction-spent">7,548,936.98 ₽</div>
+                        </div>
+
+                        <div class="transaction-details-list">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="detail-label">ID Чека</div>
+                                <div class="detail-value">IV94817591</div>
+                                <button class="copy-btn" onclick="copyText('IV94817591')" title="Копировать">
+                                    <span class="copy-icon">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                    <span class="check-icon">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="detail-label">Дата</div>
+                                <div class="detail-value">1 сен. 10:15</div>
+                            </div>
+                        </div>
+
+                        <button class="back-btn" onclick="closeTestModal()">Назад</button>
+                    `;
+                    break;
+
+                default:
+                    content = `
+                        <div class="transaction-summary">
+                            <div class="transaction-icons-overlay">
+                                <div class="icons-wrapper">
+                                    <div class="icon-back">
+                                        <img src="/static/images/coins/USDT.webp" alt="USDT" class="icon-img">
+                                    </div>
+                                    <div class="icon-front">
+                                        <img src="/static/images/currency/RUB.webp" alt="RUB" class="icon-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transaction-type">Транзакция</div>
+                            <div class="transaction-amount-large negative">-5.000000 USDT</div>
+                            <div class="transaction-spent">400.0 ₽</div>
+                        </div>
+
+                        <div class="transaction-details-list">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="detail-label">Дата</div>
+                                <div class="detail-value">22 авг. 09:15</div>
+                            </div>
+                        </div>
+
+                        <button class="back-btn" onclick="closeTestModal()">Назад</button>
+                    `;
+            }
+
+            modalBody.innerHTML = content;
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeTestModal() {
+            const modal = document.getElementById('transaction-modal');
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        function copyText(text) {
+
+            const event = window.event || arguments.callee.caller.arguments[0];
+            const button = event.target.closest('.copy-btn');
+
+            if (button) {
+
+                button.classList.add('copied', 'success');
+            }
+
+            navigator.clipboard.writeText(text).then(() => {
+                showCopyNotification();
+
+                if (button) {
+                    setTimeout(() => {
+                        button.classList.remove('copied', 'success');
+                    }, 2000);
+                }
+            }).catch(err => {
+                console.error('Ошибка копирования:', err);
+
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopyNotification();
+
+                if (button) {
+                    setTimeout(() => {
+                        button.classList.remove('copied', 'success');
+                    }, 2000);
+                }
+            });
+        }
+
+        function showCopyNotification() {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #10b981;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                z-index: 1001;
+                animation: slideIn 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            `;
+            notification.textContent = 'Скопировано!';
+
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+                style.remove();
+            }, 2000);
+        }
+
+        document.addEventListener('click', (e) => {
+            const modal = document.getElementById('transaction-modal');
+            if (modal && e.target === modal) {
+                closeTestModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('transaction-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeTestModal();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

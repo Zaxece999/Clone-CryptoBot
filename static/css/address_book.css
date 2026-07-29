@@ -1,0 +1,161 @@
+.address-book-body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #1c1e22;
+  color: #e4e6eb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.address-book-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sheet {
+  background-color: #282a2e;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  transform: translateY(0);
+  transition: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #3c3e42;
+  position: sticky;
+  top: 0;
+  background-color: #282a2e;
+  z-index: 10;
+}
+
+.sheet-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e4e6eb;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9aa0a6;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.coin-picker {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.coin-picker .row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #3c3e42;
+  cursor: pointer;
+}
+
+.coin-picker .row:last-child {
+  border-bottom: none;
+}
+
+.coin-picker .row:hover {
+  background-color: #33363b;
+}
+
+.coin-picker .row .left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.coin-picker .row .coin-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.coin-picker .row .labels .name {
+  font-weight: 500;
+  font-size: 16px;
+  color: #e4e6eb;
+}
+
+.coin-picker .row .labels .sub {
+  font-size: 13px;
+  color: #9aa0a6;
+}
+
+.chev {
+  font-size: 16px;
+  color: #9aa0a6;
+}
+
+@media (max-width: 520px) {
+  .sheet {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: calc(100vh - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .address-book-page {
+    padding: 10px;
+  }
+
+  .sheet-header {
+    padding: 10px 15px;
+  }
+
+  .sheet-title {
+    font-size: 16px;
+  }
+
+  .coin-picker .row {
+    padding: 10px 15px;
+  }
+
+  .coin-picker .row .coin-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+
+  .coin-picker .row .labels .name {
+    font-size: 14px;
+  }
+
+  .coin-picker .row .labels .sub {
+    font-size: 12px;
+  }
+}
